@@ -1,0 +1,60 @@
+body {
+    background-color: #E4E4D0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.styel-score,
+.style-question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 20px;
+    height: 40vh;
+    width: 40%; /* Use a percentage for responsiveness */
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: rgba(240, 248, 255, 0.466);
+}
+
+#options {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#all-options {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+.container button {
+    border: none;
+    font-size: 17px;
+    padding: 10px 40px; /* Use percentage for padding */
+    border-radius: 10px;
+    background-color: #AEC3AE;
+}
+
+.cont button:hover {
+    box-shadow: 0px 5px 20px rgba(255, 195, 92, 0.629);
+}
+
+/* Media query for screens with a max width of 768px (typical for phones) */
+@media (max-width: 768px) {
+    .styel-score,
+    .style-question {
+        width: 90%; 
+    }
+
+    .container button {
+        padding: 10px 30px; 
+    }
+}
+

@@ -17,6 +17,11 @@
 		<!-- MDB -->
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="style.css" />
+		<style>
+			body {
+				overflow: hidden;
+			}
+		</style>
 	</head>
 	<body>
 		<script
@@ -24,6 +29,89 @@
 			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 			crossorigin="anonymous"
 		></script>
+		<!-- nav bar -->
+		<nav class="navbar bg-body-tertiary">
+			<div
+				class="container-fluid"
+				style="
+					display: flex;
+					justify-content: center;
+					flex-direction: row;
+					gap: 20px;
+					background-color: #a3678b;
+				"
+			>
+				<a class="navbar-brand" href="#" style="color: white">
+					اختبر ذاكرتك
+					<img
+						src="https://www.pngmart.com/files/23/Brain-Cartoon-PNG-HD-Isolated.png"
+						alt="Logo"
+						width="60"
+						height="60"
+						class="d-inline-block align-text-top"
+					/>
+				</a>
+			</div>
+		</nav>
+		<!-- end nav bar -->
+
+		<!-- Background image -->
+		<div
+			class="p-5 text-center bg-image"
+			style="
+				background-image: url('https://images.ctfassets.net/1ehd3ycc3wzr/q1Yp3fkjm67VIhGJgDQrY/7f4fd1d8849091d2e601d5cc891dfeab/0827_EMBER_-_how_does_cannabis_affect_memory.png');
+				height: 90vh;
+				margin-bottom: 30px;
+			"
+		>
+			<div class="mask">
+				<div class="d-flex justify-content-center align-items-start h-100;">
+					<div
+						class=""
+						style="
+							display: flex;
+							flex-direction: column;
+							/* background-color: rgba(206, 121, 121, 0.742); */
+							width: 25vw;
+							height: 80vh;
+							color: rgb(95, 88, 88);
+							border-radius: 20px;
+							/* border: 1px solid black; */
+							align-items: center;
+
+							justify-content: space-around;
+						"
+					>
+						<div>
+							<h1 class="mb-3">اختبر ذاكرتك معانا</h1>
+							<h1 class="mb-3">مستعدين نبدأ؟</h1>
+						</div>
+						<a
+							class="btn btn-outline-light"
+							href="home.html"
+							role="button"
+							style="
+								margin-bottom: 20px;
+								font-size: 25px;
+								background-color: rgba(128, 128, 128, 0.279);
+								width: 10vw;
+								text-align: center;
+							"
+							>ابدأ
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Background image -->
+		<!-- <footer class="bg-light text-center text-lg-start" style="background-color: #9cacdc">
+			
+			<div class="text-center p-3">
+				© 2020 Copyright:
+				<a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+			</div>
+		
+		</footer> -->
 	</body>
 	<script src="script.js"></script>
 </html>
