@@ -42,6 +42,14 @@ body {
     background-color: #AEC3AE;
 }
 
+.correct-answer {
+    background-color: green;
+  }
+  
+  .wrong-answer {
+    background-color: red;
+  }
+
 .cont button:hover {
     box-shadow: 0px 5px 20px rgba(255, 195, 92, 0.629);
 }

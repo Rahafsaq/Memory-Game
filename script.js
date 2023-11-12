@@ -154,6 +154,7 @@ let levels = [
 
 	// Add more levels with their images and questions
 ];
+
 let imageContainer = document.getElementById('image-container');
 let questionContainer = document.getElementById('question-container');
 let AllImages = document.getElementById('images');
@@ -165,10 +166,10 @@ let checkScore = document.getElementById('checkScore');
 let levelName = document.getElementById('levelName');
 let scoreText = document.getElementById('scoreText');
 
-let currentLevel = 0; // Start with the first level
+let currentLevel = 0;
 let currentImage = 0;
 let currentQuestion = 0;
-let userScore = 0; // Initialize the user's score
+let userScore = 0;
 let timer = 15;
 let countDown;
 
@@ -176,13 +177,12 @@ function showImage() {
 	if (currentImage < levels[currentLevel].images.length) {
 		AllImages.src = levels[currentLevel].images[currentImage];
 		imageContainer.style.display = 'flex';
-		questionContainer.style.display = 'none'; // to hide the question when image display
-
+		questionContainer.style.display = 'none';
 		setTimeout(function () {
 			imageContainer.style.display = 'none';
 			currentQuestion = 0;
 			showQuestions(currentQuestion);
-		}, 3000);
+		}, 20000);
 	} else {
 		if (currentLevel < levels.length - 1) {
 			// Move to the next level
@@ -190,7 +190,6 @@ function showImage() {
 			currentImage = 0;
 			showImage();
 		} else {
-			// Handle the situation when all images and questions are displayed.
 			showResultForAllAnswers();
 		}
 	}
@@ -206,7 +205,7 @@ function showQuestions(index) {
 		levelName.innerHTML = level.name;
 		questionText.innerHTML = question.questionTitle;
 		options.innerHTML = '';
-		// hold options btn
+		// take options btn
 		const optionButtons = [];
 
 		question.options.forEach((option) => {
@@ -215,8 +214,6 @@ function showQuestions(index) {
 			optionButtons.push(btn);
 			options.appendChild(btn);
 		});
-
-		// Add event listeners to the option buttons
 		optionButtons.forEach((btn, optionIndex) => {
 			btn.addEventListener('click', () => {
 				checkAnswer(question.options[optionIndex], question.keyAnswer);
@@ -224,8 +221,6 @@ function showQuestions(index) {
 		});
 	} // if end
 	else {
-		// All 3 questions for the current image have been displayed
-		// Move to the next image
 		currentImage++;
 		showImage();
 	}
@@ -235,7 +230,8 @@ function showQuestions(index) {
 
 function checkAnswer(myAnswer, correctAnswer) {
 	if (myAnswer === correctAnswer) {
-		userScore++; // Increase the user's score for each correct answer
+		// Increase the user's score if answer is correct
+		userScore++;
 	}
 
 	if (
@@ -252,7 +248,6 @@ function checkAnswer(myAnswer, correctAnswer) {
 			showImage();
 		}
 	} else {
-		// Show the next question or image, depending on your logic.
 		if (currentQuestion < levels[currentLevel].questions.length) {
 			showQuestions(currentQuestion);
 		} else {
@@ -263,28 +258,8 @@ function checkAnswer(myAnswer, correctAnswer) {
 	}
 }
 
-// function checkAnswer(myAnswer, correctAnswer) {
-// 	currentQuestion++; // Change 'currentIndex' to 'currentQuestion'.
-// 	clearInterval(countDown);
-
-// 	if (myAnswer === correctAnswer) {
-// 		score++;
-// 	}
-
-// 	if (currentQuestion < questions.length) {
-// 		showQuestions(currentQuestion);
-// 		timer = 15; // Adjust the initial timer back to 15 seconds
-// 		timeLeft.textContent = timer;
-// 		showTimer();
-// 	} else {
-// 		showResult();
-// 	}
-// }
-
 function showResultForAllAnswers() {
-	// Hide the question container
 	questionContainer.style.display = 'none';
-
 	// Display the user's total score
 	scoreContainer.style.display = 'flex';
 	if (userScore <= 10) {
@@ -296,6 +271,7 @@ function showResultForAllAnswers() {
 	}
 	checkScore.textContent = `نتيجتك: ${userScore} من ${calculateTotalQuestionsCount()}`;
 }
+// Calculate the user's total score
 function calculateTotalQuestionsCount() {
 	let totalCount = 0;
 	for (const level of levels) {
@@ -305,7 +281,3 @@ function calculateTotalQuestionsCount() {
 }
 
 showImage();
-
-//show the timer under or upper each question
-//show some sentanse depend on the final score
-//if click correct and wrong answer change btn color
